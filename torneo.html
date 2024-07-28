@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo de Pokémon Unite</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .countdown {
+            font-size: 2em;
+            color: #6a0dad;
+            margin-top: 20px;
+        }
+        .rules-list {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .rules-list li {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo de Pokémon Unite">
+        <h1>Torneo de Pokémon Unite</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#about">General</a></li>
+            <li><a href="#rules">Reglas</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="countdown">
+            <h2>Cuenta Regresiva</h2>
+            <div class="countdown" id="countdown-timer-es">Hora Española: <span id="es-timer"></span></div>
+            <div class="countdown" id="countdown-timer-ve">Hora Venezolana: <span id="ve-timer"></span></div>
+        </section>
+        <section id="about">
+            <h2>Información General</h2>
+            <p>¡Bienvenidos a nuestro emocionante torneo de Pokémon Unite! A continuación, encontrarás todos los detalles que necesitas para participar en el evento:</p>
+            <ul>
+                <li><strong>Fecha:</strong> 28 de Julio de 2024</li>
+                <li><strong>Hora Española:</strong> 19:00</li>
+                <li><strong>Hora Venezolana:</strong> 13:00</li>
+                <li><strong>Premios:</strong> Primer lugar: Rol exclusivo + mencion </li>
+            </ul>
+        </section>
+        <section id="rules">
+            <h2>Reglas del Torneo 🗒️</h2>
+            <ul class="rules-list">
+                <li>1️⃣ Los miembros que deseen participar en el torneo deberán inscribirse con su nickname del servidor y del Pokémon Unite. También deberán de colocar junto a ellos al compañero con el que van a participar, su compañero puede ser tanto miembro de servidor como personas terceras al servidor (es decir que podrán invitar a sus amigos privados pero deberán estar dentro del servidor para poder participar).</li>
+                <li>⚠️ Quien rompa estas reglas será automáticamente descalificado ⚠️</li>
+                <li>1️⃣ Está permitido el combate espejo (enfrentamiento entre los mismos pokemones).</li>
+                <li>2️⃣ Los participantes deben de ir siempre al carril de abajo para enfrentarse. (El Pokémon auxiliar siempre deberá estar abajo, y el Pokémon jungla puede ir tanto al medio como abajo).</li>
+                <li>3️⃣ Está permitido el robo de farmeo.</li>
+                <li>4️⃣ Si hay un enfrentamiento y uno de los participantes consigue vencer al otro, puede tranquilamente ir a su base a curarse o también puede quedarse en el centro de la línea a esperar su contrincante para iniciar nuevamente el enfrentamiento.</li>
+                <li>5️⃣ El auxiliar tiene prohibido subir a la jungla o a otra línea que no sea la de abajo.</li>
+                <li>6️⃣ Si el participante logra vencer a su rival tiene prohibido esconderse en los arbustos para crearle una emboscada imprevista.</li>
+                <li>7️⃣ Está permitido esconderse en los arbustos durante el enfrentamiento.</li>
+                <li>8️⃣ Los bufos están estrictamente prohibidos tanto los Regis de arriba y abajo como el Rayquaza o Zapdos.</li>
+                <li>9️⃣ Pokemones prohibidos en el torneo:
+                    <ul>
+                        <li>Zacian 🐺</li>
+                        <li>Mewtwo X/Y 🐱</li>
+                        <li>Urshifu F/B 🐻</li>
+                        <li>Mew 🐱</li>
+                        <li>Miraidon 🏍️</li>
+                        <li>Garchomp 🦈</li>
+                        <li>Dragonite 🐲</li>
+                        <li>Dragapult 🐉</li>
+                        <li>Metagross 💻</li>
+                        <li>Tyranitar 🦖</li>
+                        <li>Goodra 🐌</li>
+                        <li>Hoopa 🧞</li>
+                        <li>Mr. Mime 🌝</li>
+                    </ul>
+                </li>
+                <li>🔟 Los participantes deberán llevar ciertos roles, en el caso del que vaya en el carril de abajo deberá usar obligatoriamente a un Pokémon auxiliar, mientras que el que vaya en la jungla podrá utilizar cualquier otro rol.</li>
+                <li>1️⃣1️⃣ Los participantes ganarán con la ruptura de base.</li>
+                <li>Cualquier duda o descontento abrir tickets para contactarse directamente con los administradores.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Servidor de Discord de Pokémon Unite. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const esCountDownDate = new Date("Jul 28, 2024 19:00:00 GMT+2").getTime();
+            const veCountDownDate = new Date("Jul 28, 2024 13:00:00 GMT-4").getTime();
+
+            const esTimer = document.getElementById('es-timer');
+            const veTimer = document.getElementById('ve-timer');
+
+            const updateCountdown = (countDownDate, element) => {
+                const now = new Date().getTime();
+                const distance = countDownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                element.innerHTML = days + "d " + hours + "h " +
+                    minutes + "m " + seconds + "s ";
+
+                if (distance < 0) {
+                    clearInterval(timerInterval);
+                    element.innerHTML = "¡El torneo ha comenzado!";
+                }
+            }
+
+            const timerInterval = setInterval(() => {
+                updateCountdown(esCountDownDate, esTimer);
+                updateCountdown(veCountDownDate, veTimer);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
