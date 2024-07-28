@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servidor de Discord de Pokémon Unite</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo de Pokémon Unite">
+        <h1 class="animated-title">Bienvenidos al Servidor de Discord de Pokémon Unite</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/torneo.html">Torneo</a></li>
+            <li><a href="/redes.html">Redes Sociales</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="discord-widget">
+            <iframe src="https://discord.com/widget?id=930555092124442625&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+        </section>
+        <section id="about">
+            <h2>Sobre Nosotros</h2>
+            <p>Únete a nuestra comunidad para discutir estrategias, formar equipos y participar en torneos de Pokémon Unite.</p>
+        </section>
+        <section id="join">
+            <h2>Únete a Nosotros</h2>
+            <p>Haz clic en el siguiente enlace para unirte a nuestro servidor de Discord:</p>
+            <a href="https://discord.gg/pokemon-unite-930555092124442625" class="join-button">Unirse al Discord</a>
+        </section>
+        <section id="contact">
+            <h2>Contacto</h2>
+            <p>Para más información, puedes contactarnos a través de nuestro correo: <a href="mailto:pokemonuniteesdiscord@gmail.com">pokemonuniteesdiscord@gmail.com</a></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Servidor de Discord de Pokémon Unite. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const pageTitles = [
+                "Bienvenidos al Servidor de Discord de Pokémon Unite",
+                "Únete a la Comunidad de Pokémon Unite",
+                "Participa en Torneos y Discusiones de Pokémon Unite"
+            ];
+            const tabTitles = [
+                "🧡Torneos💜",
+                "💜Activos🧡",
+                "🧡Exclusivos💜",
+                "🧡💜Pokemon unite💜🧡"
+            ];
+            let pageIndex = 0;
+            let tabIndex = 0;
+            const animatedTitle = document.querySelector('.animated-title');
+
+            setInterval(() => {
+                pageIndex = (pageIndex + 1) % pageTitles.length;
+                animatedTitle.textContent = pageTitles[pageIndex];
+            }, 3000);
+
+            setInterval(() => {
+                tabIndex = (tabIndex + 1) % tabTitles.length;
+                document.title = tabTitles[tabIndex];
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
